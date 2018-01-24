@@ -1,0 +1,12 @@
+[user]
+	email = thibault.hartmann@ge.com
+	name = Thibault Hartmann
+[core]
+	trustctime = false
+
+[merge]
+    tool = splice
+
+[mergetool "splice"]
+    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+    trustExitCode = true
