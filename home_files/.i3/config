@@ -9,6 +9,10 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# sets a desktop background
+#exec_always --no-startup-id feh --bg-scale ~/pictures/Backgrounds/background01.jpg
+
+
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font

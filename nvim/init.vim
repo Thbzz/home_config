@@ -8,7 +8,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'flazz/vim-colorschemes'
 
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 
 " Improves directory management in vim
 Plug 'tpope/vim-vinegar'
@@ -16,11 +16,13 @@ Plug 'tpope/vim-vinegar'
 " shows character motions
 Plug 'unblevable/quick-scope'
 
+Plug 'easymotion/vim-easymotion'
+
 Plug 'sjl/splice.vim'
 
-Plug 'mesonbuild/meson'
 Plug 'stfl/meson.vim'
 
+Plug 'kergoth/vim-bitbake'
 
 " " Any valid git URL is allowed
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -51,6 +53,12 @@ Plug 'junegunn/fzf.vim'
 " " Initialize plugin system
 call plug#end()
 
+
+let g:python_host_prog  = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+
+" Allow removing non empty directories from inside vim
+let g:netrw_localrmdir='rm -r'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -99,6 +107,7 @@ set lazyredraw      " do not redraw while execution of cmds is not finished
 
 set foldmethod=syntax   " use the syntax file to hide bunches of code
 set nomodeline
+set mouse=a
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"                Mappings
@@ -140,6 +149,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 vnoremap // y/\V<C-R>"<CR>
 
+nnoremap <leader>gto :YcmCompleter GoTo<CR>
+nnoremap <leader>gty :YcmCompleter GetType<CR>
 
 " FZF plugin mappings
 
